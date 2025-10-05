@@ -1,0 +1,20 @@
+<!-- Why Choose -->
+<div class="mt-5 mb-4">
+    <div class="container">
+        <div class="row ">
+            {{ range (.Paginator 3).Pages.ByPublishDate.Reverse }}
+            <div class="col-lg-4 col-md-6 col-12 phone-fast mt-4">
+                <div class="whychoose-card ">
+                    {{ .Render "li"}}
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        <div class="row mt-5 mb-5">
+            <div class="col-md-12 text-center my-5 ">
+                <a class="btn btn-primary py-3 px-5" href="/blog">View All <i class="fa fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Why Choose Ends -->

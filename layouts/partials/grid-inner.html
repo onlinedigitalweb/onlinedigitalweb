@@ -1,0 +1,25 @@
+{{range .Params.sections}}
+<div class="homegrid my-5 py-5">
+    <div class="row">
+        <div class="col-md-12 text-center topblocktxt">
+            <span class="blocktxt">{{.titleBadge}}</span>
+            <h2>{{.title}}</h2>
+            <p>{{.subTitle}}</p>
+        </div>
+        {{range .lists }}
+        <div class="rowitems col-lg-12 col-md-12">
+            <div class="col-lg-5 col-md-5 imgcontent"><img src="{{ .image | absURL }}" alt=""></div>
+            <div class="col-lg-7 col-md-7 gridcontent">
+                <h3>{{.heading}}</h3>
+                {{with .subHeading}}
+                <h4>{{.}}</h4>{{end}} {{.content | safeHTML | markdownify}}
+
+                <div class="bannerbtn mt-4"><a href="#" class="btn-arrow transparentbtn">Get More</a></div>
+            </div>
+        </div>
+        {{end}}
+
+
+    </div>
+</div>
+{{end}}

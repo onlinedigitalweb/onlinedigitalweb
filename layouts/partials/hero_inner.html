@@ -1,0 +1,14 @@
+<div class="row align-items-center pt-150 hero-info">
+    <div class="col-lg-6 ">
+        <div class="col-md-11 mx-auto">
+            <h1 class="h1-hero">{{ .Params.hero.heroTitle}} </h1>
+            {{ .Params.hero.heroDesc | safeHTML }}
+            <div class="bannerbtn mt-4">
+                <a href="{{ .Params.hero.heroBtnUrl}}" class="btn-arrow" tarfet="{{ .Params.hero.btnTraget}}">{{ .Params.hero.heroBtnText}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <figure><img src="{{ .Params.hero.heroImage}}" alt="{{ .Params.hero.heroTitle}}"></figure>
+    </div>
+</div>

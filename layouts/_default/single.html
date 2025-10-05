@@ -1,0 +1,45 @@
+{{ define "main" }}
+<!-- Hero Section -->
+
+<!-- Hero Section -->
+<div class="clearfix"></div>
+
+<!-- Inner Content Area -->
+<section class="container innercontentarea">
+
+    {{if ne .URL "/faq/" }}
+    <div class="row">
+        <div class="col-md-12">
+            {{.Content}}
+        </div>
+    </div>
+
+    {{else}}
+
+    <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <div id="accordion" class="accordion faqaccordion">
+
+                <div class="card mb-0">
+                    {{range $index, $elem := .Site.Data.faq55.items }}
+                    <div class="card-header collapsed" data-toggle="collapse" href="#faq{{$index}}">
+                        <a class="card-title">
+                {{.question}}
+              </a>
+                    </div>
+                    <div id="faq{{$index}}" class="card-body collapse clrmod" data-parent="#accordion">
+                        {{.answer | safeHTML}}
+                    </div>
+                    {{end }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{end}}
+
+
+</section>
+<!-- Inner Content Area -->
+
+{{ end }}

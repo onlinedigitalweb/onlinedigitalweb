@@ -1,0 +1,13 @@
+<div class="container boxsection space">
+    <div class="row d-flex">
+        {{ $nColumn := .Params.heroBelwoBoxNumber }} {{range .Params.heroBelwoBox}}
+        <div class="col-md-{{ div 12  $nColumn }} col-sm-3 col-xs-12">
+            <div class="shadowbox  h-100">
+                <figure><img src='{{ .hBelwoBoxImage | absURL}}' alt="{{.hBelwoBoxTitle}}"></figure>
+                <h5>{{if .hBelwoBoxBtnUrl}} <a href="{{.hBelwoBoxBtnUrl |  absURL}}">{{.hBelwoBoxTitle}}</a> {{else}} {{.hBelwoBoxTitle}} {{end}}</h5>
+                <p> {{.hBelwoBoxDesc}} </p>
+            </div>
+        </div>
+        {{end}}
+    </div>
+</div>

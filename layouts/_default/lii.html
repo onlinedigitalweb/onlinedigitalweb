@@ -1,0 +1,14 @@
+<div class="hvr-wobble-vertical  cards card-cut">
+    <a href="{{ .RelPermalink }}" class="" title="{{ .Title }}">
+        <div class="row">
+            <div class="col-lg-5 col-12">
+                {{ if .Params.image }}<img class="img-fluid" style="height: 120px; width: 100%;border-radius: 8px;" loading="lazy" src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
+            </div>
+            <div class="col-lg-7 col-12">
+                <h6>{{ .Title }}</h6>
+                <p style="margin: 0px;">{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
+                <p class="blog-btn-arrow">Read more...</p>
+            </div>
+        </div>
+    </a>
+</div>

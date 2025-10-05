@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="author" content="{{ with .Site.Params.author }}{{ . }}{{ end }}">
+    <meta name="google-site-verification" content="N7jAqj_MW6tgJz4W5AXMdDQhAbt6f52SE3EDhAxq-RY" />
+
+    <!-- Enhanced Keywords Meta Tag -->
+    <meta name="keywords"
+        content="Senior Front-End Developer India, Professional Website Designer, Freelance Web Developer, UI UX Designer Portfolio, Website Development Services India, Best Front End Developer, WordPress Developer India, Responsive Web Design, Professional Website Design Services, Business Website Designer India">
+
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="en-US">
+    <meta name="geo.region" content="IN">
+    <meta name="geo.country" content="India">
+    <meta name="geo.placename" content="India">
+
+    <!-- Enhanced Open Graph Metadata -->
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}" />
+    <meta property="og:site_name"
+        content="Online Digital Web - Senior Front-End Developer & Professional Website Designer Portfolio" />
+    <meta property="og:image" content="https://onlinedigitalweb.com/images/website-design.jpeg" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Online Digital Web - Professional Website Designer Portfolio">
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:type" content="website" />
+    <meta property="article:modified_time" content="{{ now.Format " 2006-01-02T15:04:05-07:00 " }}" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description"
+        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="twitter:image" content="https://onlinedigitalweb.com/images/website-design.jpeg">
+
+    <!-- Essential Stylesheets -->
+    <!-- Link Bootstrap Icons  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        crossorigin="anonymous">
+    <!--  Link slick slider  -->
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slick-theme.css">
+
+    <!-- Link aos animation  -->
+    <link rel="stylesheet" href="/css/aos.css">
+    <!-- Link popup  -->
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+
+    <!-- Link Bootstrap css -->
+    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
+    <!-- Link Custom css -->
+    <link rel="stylesheet" href="/css/main.css">
+
+    <link rel="shortcut icon" href="/images/favicon.jpg" type="image/x-icon">
+    <link rel="icon" href="/images/favicon.jpg" type="image/x-icon">
+
+    <!-- Canonical and SEO Links -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-20HKJF5NP2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-20HKJF5NP2');
+    </script>
+
+
+</head>
+
+<!-- <a href="https://api.whatsapp.com/send?text=Hello! I'm looking for Thanks!&amp;phone=+91 9813866346" target="_" class="whatsapp_float"><img src="/images/whatsapp.svg" alt="whatsapp"> </a> -->
+
+<body>

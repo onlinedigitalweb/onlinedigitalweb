@@ -1,0 +1,19 @@
+<a href="{{ .RelPermalink }}">
+    <div class="blog_left_sidebar">
+        <article class="row blog_item">
+            <div class="col-md-12">
+                <div class="blog_post">
+                    {{ if .Params.image }}<img class="img-fluid" style="width: 100%;height: 250px; border-radius: 5px;" loading="lazy" src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }}
+                    <div class="blog_details mt-3">
+                        <p><span class="date-color">{{ .Date.Format "Mon, Jan 2, 2006" }}</span></p>
+                        <h5 maxlength="50" class="post-title my-2 titleclear">{{ .Title }}</h5>
+                        <p class="descriptionclear" maxlength="100" style="color: #5A5A5A;">
+                            {{ .Description }}
+                        </p>
+                        <a href="{{ .RelPermalink }}" class="primary_btn"><span>View More...</span></a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</a>
