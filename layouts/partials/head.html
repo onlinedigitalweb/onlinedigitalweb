@@ -16,7 +16,8 @@
     <!-- Enhanced Open Graph Metadata -->
     <meta property="article:modified_time" content="{{ now.Format " 2006-01-02T15:04:05-07:00 " }}" />
     <!-- Link Bootstrap Icons  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        crossorigin="anonymous">
     <!--  Link slick slider  -->
     <link rel="stylesheet" href="/css/slick.css">
     <link rel="stylesheet" href="/css/slick-theme.css">
@@ -41,4 +42,20 @@
     </script>
 </head>
 
+<a href="https://api.whatsapp.com/send?phone=18257344597&text=Hello! I'm looking for Thanks!" target="_blank" class="whatsapp_float">
+  <img src="/img/whatsapp.svg" alt="WhatsApp">
+</a>
+
 <body>
+
+    <style>
+        .whatsapp_float {
+            position: fixed;
+            bottom: 80px;
+            right: 8px;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            z-index: 100;
+        }
+    </style>
