@@ -3284,7 +3284,7 @@ p {
 }
 
 .map {
-    max-width: 1096px;
+    /* max-width: 1096px; */
     margin: auto;
     margin-bottom: 181px
 }
