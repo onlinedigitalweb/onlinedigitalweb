@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /admin/
 Disallow: /private/
 Allow: /public/
-Sitemap: https://onlinedigitalweb.com/sitemap.xml
+Sitemap: https://rohitsaini.co.in/sitemap.xml

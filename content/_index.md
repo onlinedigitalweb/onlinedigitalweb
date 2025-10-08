@@ -1,46 +1,83 @@
 ---
-title: "Online Digital Web"
+title: "Senior Front-End Developer & Professional Website Designer in India - Rohit Saini"
 draft: false
-description: "Online Digital Web"
+description: "Senior Front-End Developer with 7+ years of expertise in HTML, CSS, JavaScript, and UI/UX design. Professional website design services in India for businesses looking to boost their online presence with responsive, user-friendly websites."
 keywords:
-- Online Digital Web
+- Senior front end developer India
+- Professional website designer India
+- Freelance web developer India
+- Best website developer in India
+- Senior UI UX designer portfolio
+- Professional website design services India
+- Web development services India
+- WordPress developer India
+- Responsive web design services
+- Business website designer India
+- E-commerce website designer India
+- Frontend developer portfolio India
+- Custom website development India
+- Mobile responsive website design
+- Professional web developer for hire
+- Website design company India
+- HTML CSS JavaScript developer
+- React developer India
+- Modern website design services
+- SEO friendly website development
+- User interface designer India
+- Website redesign services India
+- Corporate website designer
+- Startup website developer
+- Affordable website design India
+- Quality web development services
+- Expert frontend developer
+- Creative website designer
+- Professional portfolio website
+- Web design consultant India
 
 # SEO Meta Information
 seo:
-  canonical: "https://onlinedigitalweb.com/"
+  canonical: "https://rohitsaini.co.in/"
   robots: "index, follow"
-  author: "Online Digital Web"
+  author: "Rohit Saini"
   language: "en-US"
   geo_region: "IN"
   geo_country: "India"
 
 # Open Graph Information
 og:
-  title: "Online Digital Web"
-  description: "Online Digital Web"
-  image: "https://onlinedigitalweb.com/images/website-design.jpeg"
-  url: "https://onlinedigitalweb.com/"
+  title: "Senior Front-End Developer & Professional Website Designer - Rohit Saini"
+  description: "Senior Front-End Developer with 7+ years of expertise offering professional website design services in India. Specializing in responsive, user-friendly websites for businesses."
+  image: "https://rohitsaini.co.in/images/website-design.jpeg"
+  url: "https://rohitsaini.co.in/"
   type: "website"
-  site_name: "Online Digital Web "
+  site_name: "Rohit Saini - Professional Website Designer Portfolio"
 
 # Twitter Card Information
 twitter:
   card: "summary_large_image"
-  title: "Online Digital Web"
-  description: "Online Digital Web"
-  image: "https://onlinedigitalweb.com/images/website-design.jpeg"
+  title: "Senior Front-End Developer & Website Designer - Rohit Saini"
+  description: "Professional website design services in India by Senior Front-End Developer with 7+ years experience. Creating responsive, user-friendly websites."
+  image: "https://rohitsaini.co.in/images/website-design.jpeg"
 
 # Schema.org Structured Data
 schema:
   type: "Person"
-  name: "Online Digital Web"
-  jobTitle: "Online Digital Web"
-  description: "Online Digital Web"
+  name: "Rohit Saini"
+  jobTitle: "Senior Front-End Developer & Professional Website Designer"
+  description: "Senior Front-End Developer with 7+ years of expertise in web development and UI/UX design"
   url: "https://rohitsaini.co.in"
-  image: "https://onlinedigitalweb.com/images/website-design.jpeg"
+  image: "https://rohitsaini.co.in/images/website-design.jpeg"
   location: "India"
   skills:
-    - "Online Digital Web"
+    - "Senior Front-End Development"
+    - "Professional Website Design"
+    - "UI/UX Design"
+    - "JavaScript"
+    - "React.js"
+    - "WordPress Development"
+    - "HTML5 & CSS3"
+    - "Responsive Web Design"
+    - "E-commerce Development"
 
 # Page Priority and Frequency
 sitemap:
