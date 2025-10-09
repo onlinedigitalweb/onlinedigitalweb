@@ -1,123 +1,112 @@
-<!--  Link jquery Js -->
-<script src="/js/jquery-1.12.4.min.js"></script>
-
-<!--  Link Bootstrap Js -->
-<script src="/bootstrap/bootstrap.min.js"></script>
-
-<!--  Link slick slider Js -->
-<script src="/js/slick.min.js"></script>
-
-<!--Link aos animation  -->
+<!-- Links of JS files -->
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
 <script src="/js/aos.js"></script>
-<script src="https://kit.fontawesome.com/1cbbb02fe6.js" crossorigin="anonymous"></script>
-
-<!-- Link magnific popup  -->
-<script src="/js/jquery.magnific-popup.min.js"></script>
-<!-- scrolltopcontrol js -->
-<script src="/js/scrolltopcontrol.js"></script>
-
-<!-- Link custom Js -->
+<script src="/js/nice-select.min.js"></script>
+<script src="/js/magnific-popup.min.js"></script>
+<script src="/js/jquery.mixitup.min.js"></script>
+<script src="/js/owl.carousel.min.js"></script>
 <script src="/js/main.js"></script>
 
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Toastr for notifications -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Toastr for notifications -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-  <script>
-    $(function () {
-      $("#BookAppointment").on("submit", function (event) {
-        event.preventDefault();
+<script>
+  $(function () {
+    $("#BookAppointment").on("submit", function (event) {
+      event.preventDefault();
 
-        var name = $("#name").val().trim();
-        var email = $("#email").val().trim();
-        var countryCode = $("#countryCode").val().trim();
-        var phoneNumber = $("#phoneNumber").val().trim();
-        var message = $("#message").val().trim();
+      var name = $("#name").val().trim();
+      var email = $("#email").val().trim();
+      var countryCode = $("#countryCode").val().trim();
+      var phoneNumber = $("#phoneNumber").val().trim();
+      var message = $("#message").val().trim();
 
-        // Country Code validation
-        if (!countryCode) {
-          toastr.error("Please select a country code.");
-          return;
+      // Country Code validation
+      if (!countryCode) {
+        toastr.error("Please select a country code.");
+        return;
+      }
+
+      var fullPhone = countryCode + phoneNumber;
+
+      var data = {
+        companyId: "68e4bbf507ed7331a1a723a0",
+        formId: "68e4bbf507ed7331a1a723a6",
+        locationId: "68e4bbf507ed7331a1a723a2",
+        source: "Online Digital Web",
+        fields: [
+          { key: "name", value: name },
+          { key: "email", value: email },
+          { key: "phoneNumber", value: fullPhone },
+          { key: "message", value: message }
+        ]
+      };
+
+      var BookAppointment = JSON.stringify(data);
+      $.ajax({
+        url: "https://crm-api.leadhooper.com/api/lead",
+        headers: { 'Content-Type': 'application/json' },
+        type: "post",
+        data: BookAppointment,
+        success: function (d) {
+          $("#BookAppointment")[0].reset();
+          toastr.success(d.message);
+          window.location = "/";
+        },
+        error: function (xhr, status, error) {
+          var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : 'Failed to submit form';
+          toastr.error(errorMessage);
         }
-
-        var fullPhone = countryCode + phoneNumber;
-
-        var data = {
-          companyId: "68e4bbf507ed7331a1a723a0",
-          formId: "68e4bbf507ed7331a1a723a6",
-          locationId: "68e4bbf507ed7331a1a723a2",
-          source: "Online Digital Web",
-          fields: [
-            { key: "name", value: name },
-            { key: "email", value: email },
-            { key: "phoneNumber", value: fullPhone },
-            { key: "message", value: message }
-          ]
-        };
-
-        var BookAppointment = JSON.stringify(data);
-        $.ajax({
-          url: "https://crm-api.leadhooper.com/api/lead",
-          headers: { 'Content-Type': 'application/json' },
-          type: "post",
-          data: BookAppointment,
-          success: function (d) {
-            $("#BookAppointment")[0].reset();
-            toastr.success(d.message);
-            window.location = "/";
-          },
-          error: function (xhr, status, error) {
-            var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : 'Failed to submit form';
-            toastr.error(errorMessage);
-          }
-        });
       });
     });
-  </script>
+  });
+</script>
 
 
 <script>
-$(function () {
-  $("#SubscribeForm").on("submit", function (event) {
-    event.preventDefault();
+  $(function () {
+    $("#SubscribeForm").on("submit", function (event) {
+      event.preventDefault();
 
-    var email = $("#subscribeEmail").val().trim();
+      var email = $("#subscribeEmail").val().trim();
 
-    if (!email) {
-      toastr.error("Please enter your email address.");
-      return;
-    }
-
-    // ✅ Hardcoded details
-    var data = {
-      companyId: "68e4bbf507ed7331a1a723a0",
-      formId: "68e4bbf507ed7331a1a723a6",
-      locationId: "68e4bbf507ed7331a1a723a2",
-      source: "Online Digital Web - Subscribe Form",
-      fields: [
-        { key: "name", value: "Website Subscriber" },
-        { key: "email", value: email },
-        { key: "phoneNumber", value: "N/A" },
-        { key: "message", value: "Subscribed to newsletter." }
-      ]
-    };
-
-    $.ajax({
-      url: "https://crm-api.leadhooper.com/api/lead",
-      headers: { 'Content-Type': 'application/json' },
-      type: "POST",
-      data: JSON.stringify(data),
-      success: function (d) {
-        $("#SubscribeForm")[0].reset();
-        toastr.success("Thank you for subscribing!");
-      },
-      error: function (xhr) {
-        var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : 'Failed to subscribe.';
-        toastr.error(errorMessage);
+      if (!email) {
+        toastr.error("Please enter your email address.");
+        return;
       }
+
+      // ✅ Hardcoded details
+      var data = {
+        companyId: "68e4bbf507ed7331a1a723a0",
+        formId: "68e4bbf507ed7331a1a723a6",
+        locationId: "68e4bbf507ed7331a1a723a2",
+        source: "Online Digital Web - Subscribe Form",
+        fields: [
+          { key: "name", value: "Website Subscriber" },
+          { key: "email", value: email },
+          { key: "phoneNumber", value: "N/A" },
+          { key: "message", value: "Subscribed to newsletter." }
+        ]
+      };
+
+      $.ajax({
+        url: "https://crm-api.leadhooper.com/api/lead",
+        headers: { 'Content-Type': 'application/json' },
+        type: "POST",
+        data: JSON.stringify(data),
+        success: function (d) {
+          $("#SubscribeForm")[0].reset();
+          toastr.success("Thank you for subscribing!");
+        },
+        error: function (xhr) {
+          var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : 'Failed to subscribe.';
+          toastr.error(errorMessage);
+        }
+      });
     });
   });
-});
 </script>
