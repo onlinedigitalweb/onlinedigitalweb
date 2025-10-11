@@ -5,57 +5,209 @@
     <meta charset="utf-8">
     <title>{{ .Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-        content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
     <meta name="author" content="{{ with .Site.Params.author }}{{ . }}{{ end }}">
+    <meta name="google-site-verification" content="N7jAqj_MW6tgJz4W5AXMdDQhAbt6f52SE3EDhAxq-RY" />
+
     <!-- Enhanced Keywords Meta Tag -->
-    <meta name="keywords" content="">
+    <meta name="keywords" content="Senior Front-End Developer India, Professional Website Designer, Freelance Web Developer, UI UX Designer Portfolio, Website Development Services India, Best Front End Developer, WordPress Developer India, Responsive Web Design, Professional Website Design Services, Business Website Designer India">
+    
     <!-- Enhanced SEO Meta Tags -->
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="en-US">
+    <meta name="geo.region" content="IN">
+    <meta name="geo.country" content="India">
+    <meta name="geo.placename" content="India">
+    
     <!-- Enhanced Open Graph Metadata -->
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}" />
+    <meta property="og:site_name" content="Rohit Saini - Senior Front-End Developer & Professional Website Designer Portfolio" />
+    <meta property="og:image" content="https://rohitsaini.co.in/images/website-design.jpeg" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Rohit Saini - Professional Website Designer Portfolio">
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:type" content="website" />
     <meta property="article:modified_time" content="{{ now.Format " 2006-01-02T15:04:05-07:00 " }}" />
-    <!-- Link Bootstrap Icons  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-        crossorigin="anonymous">
-    <!--  Link slick slider  -->
-    <!-- <link rel="stylesheet" href="/css/slick.css"> -->
-    <!-- <link rel="stylesheet" href="/css/slick-theme.css"> -->
-    <!-- Link aos animation  -->
-    <link rel="stylesheet" href="/css/aos.css">
-    <!-- Link popup  -->
-    <!-- <link rel="stylesheet" href="/css/magnific-popup.css"> -->
-    <!-- Link Bootstrap css -->
-    <link rel="stylesheet" href="/bootstrap/bootstrap.min.css">
-    <!-- Link Custom css -->
-    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}">
+    <meta name="twitter:image" content="https://rohitsaini.co.in/images/website-design.jpeg">
+
+    <!-- Essential Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/others.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="shortcut icon" href="/images/favicon.jpg" type="image/x-icon">
     <link rel="icon" href="/images/favicon.jpg" type="image/x-icon">
-    <!-- Canonical and SEO Links -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-20HKJF5NP2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
 
-        gtag('config', 'G-20HKJF5NP2');
+    <!-- Canonical and SEO Links -->
+    <link rel="canonical" href="{{ .Permalink | absURL }}" />
+    <link rel="shortlink" href="https://rohitsaini.co.in/" />
+
+    <!-- Enhanced Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rohit Saini",
+        "jobTitle": "Senior Front-End Developer & Professional Website Designer",
+        "description": "Senior Front-End Developer with 7+ years of expertise in HTML, CSS, JavaScript, and UI/UX design, offering professional web development services to boost your online presence in India.",
+        "url": "https://rohitsaini.co.in",
+        "image": "https://rohitsaini.co.in/images/website-design.jpeg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN",
+            "addressRegion": "India"
+        },
+        "sameAs": [
+            "https://linkedin.com/in/rohitsaini-frontend-developer",
+            "https://github.com/rohitsaini",
+            "https://twitter.com/rohitsaini"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance Web Developer"
+        },
+        "knowsAbout": [
+            "Senior Front-End Development",
+            "Professional Website Design",
+            "UI/UX Design",
+            "JavaScript",
+            "React.js",
+            "WordPress Development",
+            "HTML5",
+            "CSS3",
+            "Responsive Web Design",
+            "Business Website Development",
+            "E-commerce Website Design"
+        ],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Senior Front-End Developer",
+            "occupationLocation": {
+                "@type": "Country",
+                "name": "India"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://rohitsaini.co.in"
+        }
+    }
     </script>
+
+    <!-- Enhanced Website Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Rohit Saini - Professional Website Designer Portfolio",
+        "description": "Professional portfolio of Rohit Saini - Senior Front-End Developer & Website Designer offering web development services in India",
+        "url": "https://rohitsaini.co.in",
+        "author": {
+            "@type": "Person",
+            "name": "Rohit Saini"
+        },
+        "keywords": "Senior Front-End Developer, Website Designer India, Professional Web Development Services",
+        "inLanguage": "en-US",
+        "copyrightYear": "2025",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://rohitsaini.co.in/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+
+    <!-- Enhanced Professional Service Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Rohit Saini - Professional Website Design Services",
+        "description": "Professional front-end development, website design, and UI/UX services by Senior Developer Rohit Saini",
+        "image": "https://rohitsaini.co.in/images/website-design.jpeg",
+        "priceRange": "$$",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN"
+        },
+        "provider": {
+            "@type": "Person",
+            "name": "Rohit Saini"
+        },
+        "areaServed": ["India", "Worldwide"],
+        "serviceType": [
+            "Senior Front-End Development",
+            "Professional Website Design",
+            "UI/UX Design",
+            "WordPress Development",
+            "Responsive Web Design",
+            "Business Website Development",
+            "E-commerce Website Design"
+        ],
+        "url": "https://rohitsaini.co.in",
+        "telephone": "+91-9813866346",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Development Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Professional Website Design"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Senior Front-End Development"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "WordPress Development"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+
+    <!-- Toastr CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WQLMRXK2');</script>
+    <!-- End Google Tag Manager -->
+
 </head>
 
-<a href="https://api.whatsapp.com/send?phone=18257344597&text=Hello! I'm looking for Thanks!" target="_blank" class="whatsapp_float">
-  <img src="/img/whatsapp.svg" alt="WhatsApp">
-</a>
+<a href="https://api.whatsapp.com/send?text=Hello! I'm looking for Thanks!&amp;phone=+91 9813866346" target="_" class="whatsapp_float"><img src="/images/whatsapp.svg" alt="whatsapp"> </a>
 
-<body>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" class="magnet">
 
-    <style>
-        .whatsapp_float {
-            position: fixed;
-            bottom: 80px;
-            right: 8px;
-            color: #fff;
-            border-radius: 50px;
-            text-align: center;
-            z-index: 100;
-        }
-    </style>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQLMRXK2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+

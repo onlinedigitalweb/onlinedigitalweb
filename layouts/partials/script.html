@@ -1,123 +1,190 @@
-<!--  Link jquery Js -->
-<script src="/js/jquery-1.12.4.min.js"></script>
-
-<!--  Link Bootstrap Js -->
-<script src="/bootstrap/bootstrap.min.js"></script>
-
-<!--  Link slick slider Js -->
-<script src="/js/slick.min.js"></script>
-
-<!--Link aos animation  -->
-<script src="/js/aos.js"></script>
-<script src="https://kit.fontawesome.com/1cbbb02fe6.js" crossorigin="anonymous"></script>
-
-<!-- Link magnific popup  -->
-<script src="/js/jquery.magnific-popup.min.js"></script>
-<!-- scrolltopcontrol js -->
-<script src="/js/scrolltopcontrol.js"></script>
-
-<!-- Link custom Js -->
+<script src="/js/others.js"></script>
 <script src="/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Toastr for notifications -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+    $(document).ready(function() {
 
-  <script>
-    $(function () {
-      $("#BookAppointment").on("submit", function (event) {
-        event.preventDefault();
+        $('.titleclear').each(function(f) {
 
-        var name = $("#name").val().trim();
-        var email = $("#email").val().trim();
-        var countryCode = $("#countryCode").val().trim();
-        var phoneNumber = $("#phoneNumber").val().trim();
-        var message = $("#message").val().trim();
+            var newstr = $(this).text().substring(0, 45) + "...";
+            $(this).text(newstr);
 
-        // Country Code validation
-        if (!countryCode) {
-          toastr.error("Please select a country code.");
-          return;
-        }
-
-        var fullPhone = countryCode + phoneNumber;
-
-        var data = {
-          companyId: "68e4bbf507ed7331a1a723a0",
-          formId: "68e4bbf507ed7331a1a723a6",
-          locationId: "68e4bbf507ed7331a1a723a2",
-          source: "Online Digital Web",
-          fields: [
-            { key: "name", value: name },
-            { key: "email", value: email },
-            { key: "phoneNumber", value: fullPhone },
-            { key: "message", value: message }
-          ]
-        };
-
-        var BookAppointment = JSON.stringify(data);
-        $.ajax({
-          url: "https://crm-api.leadhooper.com/api/lead",
-          headers: { 'Content-Type': 'application/json' },
-          type: "post",
-          data: BookAppointment,
-          success: function (d) {
-            $("#BookAppointment")[0].reset();
-            toastr.success(d.message);
-            window.location = "/";
-          },
-          error: function (xhr, status, error) {
-            var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : 'Failed to submit form';
-            toastr.error(errorMessage);
-          }
         });
-      });
+    })
+</script>
+
+<script>
+    $(document).ready(function() {
+
+        $('.descriptionclear').each(function(f) {
+
+            var newstr = $(this).text().substring(0, 100) + "...";
+            $(this).text(newstr);
+
+        });
+    })
+</script>
+
+<script>
+    $(function() {
+        $("#BookAppointment").on("submit", function(event) {
+            event.preventDefault();
+
+            var name = $("#name").val().trim();
+            var email = $("#email").val().trim();
+            var phoneNumber = $("#phoneNumber").val().trim();
+            var message = $("#message").val().trim();
+
+            var data = {
+                companyId: "66bf05890472a2f5dc5b33f9",
+                formId: "66bf05890472a2f5dc5b33ff",
+                locationId: "66bf05890472a2f5dc5b33fb",
+                source: "WebSite",
+                fields: [{
+                    key: "name",
+                    value: name
+                }, {
+                    key: "email",
+                    value: email
+                }, {
+                    key: "phoneNumber",
+                    value: phoneNumber
+                }, {
+                    key: "message",
+                    value: message
+                }]
+            };
+
+            var BookAppointment = JSON.stringify(data);
+            $.ajax({
+                url: "https://crm-api.leadhooper.com/api/lead",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                type: "post",
+                data: BookAppointment,
+                success: function(d) {
+                    $("#BookAppointment")[0].reset();
+                    toastr.success(d.message);
+                    window.location = "/";
+
+                },
+                error: function(xhr, status, error) {
+                    var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : 'Failed to submit form';
+                    toastr.error(errorMessage);
+                }
+            });
+        });
     });
-  </script>
+</script>
+
+<!-- ------------------------------------------------------------------ -->
+
+<!-- Twitter -->
+<script>
+    $(".shareTwitter").click(function() {
+        console.log("click", window.location.href)
+        window.open("https://twitter.com/intent/tweet?url=" + window.location.href, '_blank');
+    });
+
+    // $(".copyLink").click(function() {
+    //     getTwitterUrl = 'https://twitter.com/intent/tweet?url='
+    //     getRouteLocation = window.location.href;
+    //     navigator.clipboard.writeText(`${getTwitterUrl}${getRouteLocation}`);
+    // });
+</script>
+<!-- facebook -->
+<script>
+    $(".sharefacebook").click(function() {
+        console.log("click", window.location.href)
+        window.open("https://www.facebook.com/sharer/sharer.php?u=" + window.location.href, '_blank');
+    });
+
+    // $(".copyLink").click(function() {
+    //     getTwitterUrl = 'https://www.facebook.com/sharer/sharer.php?u='
+    //     getRouteLocation = window.location.href;
+    //     navigator.clipboard.writeText(`${getTwitterUrl}${getRouteLocation}`);
+    // });
+</script>
+<!-- linkedin -->
+<script>
+    $(".sharelinkedin").click(function() {
+        console.log("click", window.location.href)
+        window.open("https://www.linkedin.com/shareArticle?mini=true&url=" + window.location.href, '_blank');
+    });
+
+    // $(".copyLink").click(function() {
+    //     getTwitterUrl = 'https://twitter.com/intent/tweet?url='
+    //     getRouteLocation = window.location.href;
+    //     navigator.clipboard.writeText(`${getTwitterUrl}${getRouteLocation}`);
+    // });
+</script>
+<!-- Whatsapp -->
+<script>
+    $(".sharewhatsapp").click(function() {
+        console.log("click", window.location.href)
+        window.open("https://wa.me/?text=Awesome%20Blog%20" + window.location.href, );
+    });
+
+    // $(".copyLink").click(function() {
+    //     getTwitterUrl = 'https://twitter.com/intent/tweet?url='
+    //     getRouteLocation = window.location.href;
+    //     navigator.clipboard.writeText(`${getTwitterUrl}${getRouteLocation}`);
+    // });
+</script>
 
 
 <script>
-$(function () {
-  $("#SubscribeForm").on("submit", function (event) {
-    event.preventDefault();
-
-    var email = $("#subscribeEmail").val().trim();
-
-    if (!email) {
-      toastr.error("Please enter your email address.");
-      return;
-    }
-
-    // ✅ Hardcoded details
-    var data = {
-      companyId: "68e4bbf507ed7331a1a723a0",
-      formId: "68e4bbf507ed7331a1a723a6",
-      locationId: "68e4bbf507ed7331a1a723a2",
-      source: "Online Digital Web - Subscribe Form",
-      fields: [
-        { key: "name", value: "Website Subscriber" },
-        { key: "email", value: email },
-        { key: "phoneNumber", value: "N/A" },
-        { key: "message", value: "Subscribed to newsletter." }
-      ]
-    };
-
-    $.ajax({
-      url: "https://crm-api.leadhooper.com/api/lead",
-      headers: { 'Content-Type': 'application/json' },
-      type: "POST",
-      data: JSON.stringify(data),
-      success: function (d) {
-        $("#SubscribeForm")[0].reset();
-        toastr.success("Thank you for subscribing!");
-      },
-      error: function (xhr) {
-        var errorMessage = xhr.responseJSON ? xhr.responseJSON.message : 'Failed to subscribe.';
-        toastr.error(errorMessage);
-      }
+  document.addEventListener("DOMContentLoaded", function () {
+    const allLinks = document.querySelectorAll("a");
+    allLinks.forEach(function (link) {
+      link.classList.add("magnet-link");
     });
   });
-});
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const tocLinks = document.querySelectorAll("#toc a");
+        const headings = document.querySelectorAll("h2, h3");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    const id = entry.target.getAttribute("id");
+                    if (entry.isIntersecting) {
+                        tocLinks.forEach((link) => {
+                            // Remove 'active' class from all links
+                            link.classList.remove("active");
+
+                            if (link.getAttribute("href") === `#${id}`) {
+                                // Add 'active' class to the current link
+                                link.classList.add("active");
+
+                                // Expand parent `ul` for active `h3`
+                                if (entry.target.tagName === "H3") {
+                                    const parentUl = link.closest("ul");
+                                    if (parentUl) parentUl.style.display = "block";
+                                }
+
+                                // Expand sub-items for active `h2`
+                                if (entry.target.tagName === "H2") {
+                                    document
+                                        .querySelectorAll("#toc ul ul")
+                                        .forEach((ul) => (ul.style.display = "none"));
+                                    const subList = link.closest("li").querySelector("ul");
+                                    if (subList) subList.style.display = "block";
+                                }
+                            }
+                        });
+                    }
+                });
+            }, {
+                threshold: 0.6
+            } // Adjust threshold for better visibility handling
+        );
+
+        headings.forEach((heading) => observer.observe(heading));
+    });
 </script>
